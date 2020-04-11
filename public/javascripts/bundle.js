@@ -117,6 +117,15 @@ scalingButton.click(function () {
     height: '100pt'
   }, 2000);
 });
+var movingButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#moving-button');
+movingButton.click(function () {
+  block.animate({
+    'marginLeft': '500px'
+  }, 500);
+  block.animate({
+    'marginLeft': '20px'
+  }, 1000);
+});
 
 /***/ }),
 /* 1 */
