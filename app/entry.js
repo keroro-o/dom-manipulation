@@ -1,7 +1,18 @@
 'use strict';
-import dc from 'damage-calc';
-import crypto from 'crypto';
-const root = document.getElementById('root');
-root.innerHTML = '<p>攻撃力 100, 防御 50, 防御貫通 30 のダメージは、'
-  + dc.effectiveDamage(100, 50, 30) + '</p><p>'
-  + crypto.randomBytes(8).toString('hex') + '</p>';
+
+// jQuery を使ったコード
+import $ from 'jquery';   // jqueryモジュールを読み込み、$ という名前の変数に代入
+
+const block = $('#block');  // id="block" が設定された div 要素を取得し、変数に代入
+const scalingButton = $('#scaling-button');   // id="scaling-button" が設定された button 要素を取得し、変数に代入
+
+/**
+ * jQuery で取得した要素の jQuery オブジェクトの click 関数の第一引数に、無名関数を渡し、
+ * 　要素がクリックされた際に、この click 関数に渡された animate 関数が呼び出される。
+ * animate 関数は、CSS の style を JavaScript のオブジェクトとして定義したものを第一引数に、
+ * 　第二引数にアニメーションをする時間をミリ秒の整数で設定する。
+ */
+scalingButton.click(() => {
+  block.animate({ width: '200pt', height: '200pt' }, 2000);
+  block.animate({ width: '100pt', height: '100pt' }, 2000);
+});
